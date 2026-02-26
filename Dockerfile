@@ -3,6 +3,8 @@ ARG ALPINE_IMAGE_TAG=3.22
 
 FROM alpine:$ALPINE_IMAGE_TAG
 
+LABEL org.opencontainers.image.source=https://github.com/fathominfo/fly-pg-dump-to-s3
+
 RUN apk update && \
     apk add --no-cache \
         bash=5.2.37-r0 \

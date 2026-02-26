@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Triggers a database backup using fly-pg-dump-to-s3
-# Doc and source: https://github.com/significa/fly-pg-dump-to-s3
+# Doc and source: https://github.com/fathominfo/fly-pg-dump-to-s3
 
 set -eo pipefail
 
@@ -9,7 +9,7 @@ set -eo pipefail
 FLY_REGION=${FLY_REGION:-cdg}
 FLY_MACHINE_SIZE=${FLY_MACHINE_SIZE:-shared-cpu-4x}
 FLY_VOLUME_SIZE=${FLY_VOLUME_SIZE:-3}
-DEFAULT_DOCKER_IMAGE="ghcr.io/significa/fly-pg-dump-to-s3:3"
+DEFAULT_DOCKER_IMAGE="ghcr.io/fathominfo/fly-pg-dump-to-s3:makai_v3"
 DOCKER_IMAGE=${DOCKER_IMAGE:-$DEFAULT_DOCKER_IMAGE}
 ERROR_ON_DANGLING_VOLUMES=${ERROR_ON_DANGLING_VOLUMES:-true}
 DELETE_ALL_VOLUMES=${DELETE_ALL_VOLUMES:-true}
