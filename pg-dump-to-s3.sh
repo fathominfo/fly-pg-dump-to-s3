@@ -29,6 +29,9 @@ if [[ -z "$database_url" || -z "$destination" ]]; then
   exit 1
 fi
 
+# add date to S3 destination key
+destination="${destination}_$(date +%y%m%d_%H%M%S).tar.gz"
+
 if [[ -z $AWS_ACCESS_KEY_ID || -z $AWS_SECRET_ACCESS_KEY ]]; then
   echo "Required env vars: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
   exit 1
