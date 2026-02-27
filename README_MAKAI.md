@@ -1,4 +1,4 @@
-# Makai
+# Makai-specific: Fly pg_dump to AWS S3
 - We're using the 2nd option (from the [README.md](./README.md))
   - This is a backup via a worker machine that is spun up on Fly
   - It is triggered by a GitHub worker that starts the machine
@@ -11,6 +11,7 @@
 
 Create your resources, credentials and permissions following the
 [create resources utils documentation](./create-resources-utils).
+- See: [README_MAKAI.md](./create-resources-utils/README_MAKAI.md)
 
 ### Method 2: Worker installation
 
@@ -22,7 +23,10 @@ Create your resources, credentials and permissions following the
    AWS_ACCESS_KEY_ID=XXXX
    AWS_SECRET_ACCESS_KEY=XXXX
    DATABASE_URL=postgresql://username:password@my-fly-db-instance.internal:5432/my_database
-   S3_DESTINATION=s3://your-s3-bucket/backup.tar.gz
+   S3_DESTINATION=s3://your-s3-bucket/backup_name_no_ext
+
+   # DEV Example S3_DESTINATION (note we leave off the file extension)
+   S3_DESTINATION=s3://rowboat-db-backups-dev/rowboat_dev
    ```
 
 3. Automate the Call the reusable GitHub Actions workflow found in
