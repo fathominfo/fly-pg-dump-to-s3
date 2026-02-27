@@ -64,7 +64,7 @@ You can also trigger a manual backup without GitHub actions with `./trigger-back
    - `FLY_VOLUME_SIZE`: the size of the temporary disk where the ephemeral files live during the
      backup, set it accordingly to the size of the db. Defaults to `3`.
    - `DOCKER_IMAGE`:
-     Option to override the default docker image `ghcr.io/mudphone/fly-pg-dump-to-s3:makai_v1`
+     Option to override the default docker image `ghcr.io/fathominfo/fly-pg-dump-to-s3:makai_v1`
    - `ERROR_ON_DANGLING_VOLUMES`: After the backup completes, checks if there are any volumes still
      available, and crashes if so. This might be useful to alert that there are dangling volumes
      (that you might want to be paying for). Defaults to `true`.
